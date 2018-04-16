@@ -6,10 +6,11 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} /MTd /Fd$(OutDir)$(TargetName)
 set(CMAKE_CXX_FLAGS_MINSIZEREL  "${CMAKE_C_FLAGS_MINSIZEREL} /MT")
 set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_C_FLAGS_RELEASE} /MT")
 set(CMAKE_CXX_FLAGS_RELWITHDEBINFO  "${CMAKE_C_FLAGS_RELWITHDEBINFO} /MT /Fd$(OutDir)$(TargetName).pdb")
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:CONSOLE,5.01")
 
-set(duirc_src src/duirc.cpp)
+add_executable(duirc src/duirc.cpp)
 
-add_executable(duirc ${duirc_src})
+add_executable(duiwizard src/duiwizard.cpp)
+SET_TARGET_PROPERTIES(duiwizard PROPERTIES LINK_FLAGS "/level='requireAdministrator' /uiAccess='false'")
 
 install(TARGETS duirc RUNTIME DESTINATION "${CMAKE_SOURCE_DIR}/bin")
+install(TARGETS duiwizard RUNTIME DESTINATION "${CMAKE_SOURCE_DIR}/bin")
