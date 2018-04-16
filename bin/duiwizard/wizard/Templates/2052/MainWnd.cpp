@@ -22,6 +22,6 @@ void CMainWnd::InitWindow()
 //初始化控件
 bool CMainWnd::InitControl(void)
 {
-	labCaption = (CLabelUI*)m_PaintManager.FindControl(_T("caption"));//标题
+	labCaption = (CLabelUI*)m_pm.FindControl(_T("caption"));//标题
 	return false;
 }

@@ -137,7 +137,7 @@ function AddConfig(proj, strProjectName)
 		LinkTool.AdditionalLibraryDirectories = '"$(DUIPATH)\\Bin"';
 
 		var PreBuildEventTool =config.Tools('VCPreBuildEventTool');
-		PreBuildEventTool.CommandLine='"$(DUIPATH)\\Bin\\DuilibResBuilder.exe" "$(ProjectDir)\\" duires.zip';
+		PreBuildEventTool.CommandLine='"$(DUIPATH)\\tools\\duirc.exe" "$(ProjectDir)\\" duires.zip';
 		
 		config = proj.Object.Configurations('Release');
 		//UNICODEÏîÄ¿
@@ -166,7 +166,7 @@ function AddConfig(proj, strProjectName)
 		LinkTool.LinkIncremental=1;
 		
 		var PreBuildEventTool =config.Tools('VCPreBuildEventTool');
-		PreBuildEventTool.CommandLine='"$(DUIPATH)\\Bin\\DuilibResBuilder.exe" "$(ProjectDir)\\" duires.zip';
+		PreBuildEventTool.CommandLine='"$(DUIPATH)\\tools\\duirc.exe" "$(ProjectDir)\\" duires.zip';
 
 
 	}
